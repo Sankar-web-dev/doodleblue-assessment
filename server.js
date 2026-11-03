@@ -5,10 +5,18 @@ const connectDB = require("./config/db");
 
 const app=express();
 const userRoutes = require("./routes/user.routers");
+const categoryRoutes = require("./routes/category.routers");
+const productRoutes = require("./routes/product.routers");
+const orderRoutes = require("./routes/order.routers");
+const couponRoutes = require("./routes/coupon.routers");
 
 
 app.use(express.json());
 app.use("/api/v1", userRoutes);
+app.use("/api/v1/categories", categoryRoutes);
+app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/orders", orderRoutes);
+app.use("/api/v1/coupons", couponRoutes);
 
 
 
